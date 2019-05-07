@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500117/101624876-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-in-flat-color-glyph-pictogram-illustr.jpg" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form>
+        <input  [(ngModel)]="loginUserData.email" type="email" class="fadeIn second"  name="email" placeholder="email"  required>
+        <input type="password"  [(ngModel)]="loginUserData.password" class="fadeIn third" placeholder="password" name="password" required>
+        <input (click)="loginUser()" type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="https://accounts.google.com/signin/v2/recoveryidentifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>

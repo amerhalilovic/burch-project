@@ -1,0 +1,15 @@
+img:hover{
+
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+  
+}
+
+#k:hover {
+    
+    font-size: 1.5rem;
+}
+
+h3:hover {
+    font-size: 2rem;
+}

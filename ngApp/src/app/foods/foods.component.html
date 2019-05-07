@@ -1,0 +1,9 @@
+    <div class="row">
+    <div *ngFor="let food of foods" class="col col-sm-3 col-md-3 text-center" style="margin-top:1rem;" id="k" >
+
+      <img src="{{food.img}}" style="height: 250px !important; width: 180px;"  class=" img-thumbnail img-responsive">
+      <h3>{{food.name}}</h3>
+      <p><strong>Price {{food.price}} KM </strong></p>
+      <button class="btn btn-success">Add to cart</button>
+    </div>
+    </div>

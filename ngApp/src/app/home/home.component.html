@@ -1,0 +1,24 @@
+<div class="container" style="margin-left:1rem;">
+        <h3 style="text-align:center">Events </h3> 
+        <hr>
+    <div class="row">  
+    
+    <div *ngFor="let x of events" class="card col-sm-3 col-md-3 d-flex p-2" style="width: 18rem; padding: 0.5rem; margin-left: 12px; margin-right: 2px; align-self: center;">
+        <img class="card-img-top"
+            src="{{x.img}}"
+            alt="Card image cap"
+            width="10px;"
+            height="100px">
+            <hr>
+        <div class="card-body">
+            <h5 class="card-title float-center" style="display:inline">{{x.name}}</h5>
+    
+            <p class="card-text">{{x.description}}.</p>
+         
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="display:inline"><i style='font-size:18px; display: inline; align-self: auto;' class="far">&#xf073;</i> <br>{{x.date}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>

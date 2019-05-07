@@ -1,0 +1,12 @@
+div{
+    /* background-color:whitesmoke; */
+    height: 100% !important;
+    width: 100%;
+    opacity: 0.9;
+}  
+
+div:hover {
+    font-size: 18px;
+    opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+  }

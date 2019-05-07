@@ -1,0 +1,21 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500117/101624876-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-in-flat-color-glyph-pictogram-illustr.jpg" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <h3>Registration form  </h3>
+      <input [(ngModel)]="registerUserData.email" name ="email" type="email" class="fadeIn second" placeholder="email"  required>
+      <input [(ngModel)]="registerUserData.password" type="password" name="password"  class="fadeIn third" placeholder="password"  required>
+      <button (click)="registerUser()" type="button" class="btn btn-primary float-center" style="padding:0.5rem; margin:4px;"> Register </button>
+    </form>
+
+   
+
+  </div>
+</div>
