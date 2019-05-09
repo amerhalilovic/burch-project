@@ -8,8 +8,8 @@
       <div class="float-right" style="margin-top:0.5rem">
         <select class="selectpicker countrypicker" data-live-search="true"
           style="border:#9AD1D4 2px solid; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
-          <option value="Turkey">Turkey</option>
           <option value="English">English</option>
+          <option value="Turkey">Turkey</option>
         </select>
 
 
@@ -21,27 +21,27 @@
     width: 100%; margin-top: 1rem;">
       <div class="sidenav-bg rgba-blue-strong ">
         <hr>
-        <a class="nav-link " routerLink="/home" routerLinkActive="active"> 
+        <a class="nav-link " routerLink="/home" routerLinkActive="active">
           <img src="https://image.flaticon.com/icons/svg/25/25694.svg" alt="" width="25px" height="20px"
             style="display:inline">
           <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display: inline;"
             onmouseover="this.style.color= red;"> Home</p>
         </a>
-        <a class="nav-link" routerLink="/register" routerLinkActive="active">
-          <img src="https://cdn0.iconfinder.com/data/icons/cosmetic-store/25/Register-512.png" alt="" width="25px" height="20px"
-            style="display:inline">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active" *ngIf="!_authService.loggedIn()">
+          <img src="https://cdn0.iconfinder.com/data/icons/cosmetic-store/25/Register-512.png" alt="" width="25px"
+            height="20px" style="display:inline">
           <p
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
             Register</p>
         </a>
-        <a class="nav-link" routerLink="/login" routerLinkActive="active">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!_authService.loggedIn()">
           <img src="http://cdn.onlinewebfonts.com/svg/img_311846.png" alt="" width="25px" height="20px"
             style="display:inline">
           <p
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
             Login</p>
         </a>
-        <a class="nav-link" routerLink="/drink" routerLinkActive="active">
+         <a class="nav-link" routerLink="/drink" routerLinkActive="active">
 
           <img src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/28-512.png" alt="" width="25px"
             height="15px" style="display:inline">
@@ -67,6 +67,14 @@
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
             MyCart</p>
         </a>
+        <a class="nav-link" routerLinkActive="active" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">
+          <img src="https://png.pngtree.com/svg/20161205/a50c265b8b.svg" alt="" width="25px" height="20px"
+            style="display:inline">
+          <p
+            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
+            Logout</p>
+        </a>
+       
         <hr>
       </div>
     </div>

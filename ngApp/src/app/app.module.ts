@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -11,9 +12,12 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
+import { FoodService } from './food.service';
+import { DrinkService } from './drink.service';
+import { TokenInterceptorService } from './token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,15 +42,18 @@ import { EventService } from './event.service';
       },
       {
         path: 'food',
-        component: FoodsComponent
+        component: FoodsComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'drink',
-        component: DrinksComponent
+        component: DrinksComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'cart',
-        component: MyCartComponent
+        component: MyCartComponent,
+        canActivate: [AuthGuard]
       }, {
         path: 'login',
         component: LoginComponent
@@ -65,7 +72,12 @@ import { EventService } from './event.service';
       }
     ])
   ],
-  providers: [AuthService,EventService],
+  providers: [AuthGuard, AuthService, EventService, FoodService, DrinkService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
