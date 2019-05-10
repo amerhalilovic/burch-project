@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col sm-3" *ngFor="let y of korpa" width="5rem" height="10rem">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let y of korpa">
+                        <img src="{{y.img}}" alt="" style="height: 50px !important; width: 50px;" class="card-img-top">
+                        <h3 class="card-title">{{y.name}}</h3>
+                        <h5 class="card-text">Price : {{y.price}} KM</h5>
+                        <p class="btn btn-danger" (click)="remove(y)">Remove</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,6 +4,6 @@
       <img src="{{food.img}}" style="height: 250px !important; width: 180px;"  class=" img-thumbnail img-responsive">
       <h3>{{food.name}}</h3>
       <p><strong>Price {{food.price}} KM </strong></p>
-      <button class="btn btn-success">Add to cart</button>
+      <button class="btn btn-success" (click)="this._buyingService.buy(food)">Add to cart</button>
     </div>
     </div>
