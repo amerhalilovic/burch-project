@@ -21,9 +21,6 @@ export class FoodsComponent implements OnInit {
         res => this.foods = res,
         err => console.log(err)
       )
-
-    this._buyingService.buy(this.foods)
-    this._buyingService.del(this.foods)
   }
 
 

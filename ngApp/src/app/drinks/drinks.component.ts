@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DrinkService } from '../drink.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BuyingService } from '../buying.service';
+
 @Component({
   selector: 'app-drinks',
   templateUrl: './drinks.component.html',
@@ -11,7 +13,9 @@ export class DrinksComponent implements OnInit {
 
 
   drinks = []
+
   constructor(private _drinkService: DrinkService,
+    private _buyingService: BuyingService,
     private _router: Router) { }
 
   ngOnInit() {
@@ -28,13 +32,9 @@ export class DrinksComponent implements OnInit {
       )
   }
 
-  korpa = [];
-  dodaj(drinks) {
-    this.korpa.push(drinks);
-    console.log(drinks);
-    console.log(this.korpa);
+  dodaj(drink) {
+    this._buyingService.buy(drink)
     alert('▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬\n' + "                   Article added in the cart" + '\n▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬\n');
-
   }
 
 

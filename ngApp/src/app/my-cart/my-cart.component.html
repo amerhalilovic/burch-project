@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col sm-3" *ngFor="let y of korpa" width="5rem" height="10rem">
+        <div *ngFor="let y of korpa" class="col sm-3" width="5rem" height="10rem">
             <div class="card" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngFor="let y of korpa">
+                    <li class="list-group-item" >
                         <img src="{{y.img}}" alt="" style="height: 50px !important; width: 50px;" class="card-img-top">
                         <h3 class="card-title">{{y.name}}</h3>
                         <h5 class="card-text">Price : {{y.price}} KM</h5>

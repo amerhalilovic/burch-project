@@ -6,13 +6,20 @@ import { BuyingService } from '../buying.service';
   styleUrls: ['./my-cart.component.css']
 })
 export class MyCartComponent implements OnInit {
-  korpa = this._buyingService.buyed
-  constructor(private _buyingService: BuyingService) { }
 
-  ngOnInit() {
-   
+  korpa = []
+
+  constructor(private _buyingService: BuyingService) {
+    this.korpa = _buyingService.buyed
+    _buyingService.buyedChange.subscribe(val => {
+      this.korpa = val.buyed
+    })
   }
 
-  remove = this._buyingService.del(this.korpa)
+  ngOnInit() {}
+
+  remove(item){
+    this._buyingService.del(item)
+  }
 
 }

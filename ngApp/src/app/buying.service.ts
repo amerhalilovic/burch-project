@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,30 +7,33 @@ import { Injectable } from '@angular/core';
 export class BuyingService {
 
 
-  buyed = []
+  buyed = [];
   kupljeno = 0;
+
+  buyedChange = new Subject<any>();
+
   constructor() { }
 
 
-
-
   buy(item) {
-
     this.buyed.push(item)
     this.kupljeno += item.price;
-    console.log(item)
-    console.log(item.name)
-    console.log(item.price)
-    console.log("value" + this.kupljeno)
-    console.log(this.buyed)
+    
+    this.buyedChange.next({
+      buyed: this.buyed,
+      kupljeno: this.kupljeno
+    })
   }
 
   del(item) {
-    if (this.buyed != []) {
-      this.buyed.pop()
-    } else {
-      console.log("Prazno")
-    }
+    this.buyed = this.buyed.filter(x => {
+      return x.name != item.name
+    })
     this.kupljeno -= item.price;
+
+    this.buyedChange.next({
+      buyed: this.buyed,
+      kupljeno: this.kupljeno
+    })
   }
 }
