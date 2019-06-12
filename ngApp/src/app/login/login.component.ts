@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginUserData)
       .subscribe(
         res => {
-          console.log(res)
+          alert('login successfull')
           localStorage.setItem('token', res.token)
           this._router.navigate(['drink'])
         },
-        err => console.log(err)
+        err => alert('invalid credentials')
       )
   }
 
