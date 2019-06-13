@@ -1,6 +1,6 @@
 <div class="container" style="padding:2rem; margin-top:5px;" >
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-lg-12" style="background-color:#CC3363">
+    <div class="col-12" style="background-color:#CC3363">
 
       <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center">Student
         Canteen Menu </h2>
@@ -22,6 +22,32 @@
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
             Register</p>
         </a>
+        <a class="nav-link" routerLink="/drink" routerLinkActive="active">
+          
+          <img src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/28-512.png" alt="" width="25px"
+          height="15px" style="display:inline">
+          <p
+          style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
+          Drinks</p>
+          
+        </a>
+        <a class="nav-link" routerLink="/food" routerLinkActive="active">
+          
+          <img src="https://image.flaticon.com/icons/png/512/45/45332.png" alt="" width="25px" height="20px"
+          style="display:inline">
+          <p
+          style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
+          Foods</p>
+        </a>
+        
+
+        <a class="nav-link" routerLink="/cart" routerLinkActive="active">
+          <img src="https://image.flaticon.com/icons/png/512/34/34627.png" alt="" width="25px" height="20px"
+          style="display:inline">
+          <p
+          style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
+          MyCart</p>
+        </a>
         <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!_authService.loggedIn()">
           <img src="http://cdn.onlinewebfonts.com/svg/img_311846.png" alt="" width="25px" height="20px"
             style="display:inline">
@@ -29,46 +55,20 @@
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
             Login</p>
         </a>
-         <a class="nav-link" routerLink="/drink" routerLinkActive="active">
-
-          <img src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/28-512.png" alt="" width="25px"
-            height="15px" style="display:inline">
-          <p
-            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
-            Drinks</p>
-
-        </a>
-        <a class="nav-link" routerLink="/food" routerLinkActive="active">
-
-          <img src="https://image.flaticon.com/icons/png/512/45/45332.png" alt="" width="25px" height="20px"
-            style="display:inline">
-          <p
-            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
-            Foods</p>
-        </a>
-
-
-        <a class="nav-link" routerLink="/cart" routerLinkActive="active">
-          <img src="https://image.flaticon.com/icons/png/512/34/34627.png" alt="" width="25px" height="20px"
-            style="display:inline">
-          <p
-            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
-            MyCart</p>
-        </a>
         <a class="nav-link" routerLinkActive="active" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">
           <img src="https://png.pngtree.com/svg/20161205/a50c265b8b.svg" alt="" width="25px" height="20px"
             style="display:inline">
-          <p
+            <p
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.5rem; color:white; display:inline;">
             Logout</p>
         </a>
-       
+        
         <hr>
       </div>
     </div>
     <div class="col-md-9 col-sm-3 col-lg-9" style="margin-top:1rem">
 
-      <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
