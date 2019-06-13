@@ -5,10 +5,19 @@ div{
     opacity: 0.9;
 }  
 
-div:hover {
-    font-size: 18px;
+#podloga:hover {
+     font-size: 17px;
     opacity: 1;
     filter: alpha(opacity=100); /* For IE8 and earlier */
+    color: #ffc61a;
+    font-family:'Century Gothic';
   }
 
-  
+#opis:hover{
+    font-size: 16px;
+}
+
+#naslov:hover {
+    background-color: #0e0f0e;
+    color: white;
+}
